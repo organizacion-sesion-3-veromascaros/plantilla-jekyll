@@ -18,8 +18,8 @@ email: example@domain.com
 description: > # this means to ignore newlines until "baseurl:"
   Sitio web creado como ejemplo de esqueleto para
   crear un sitio web con Jekyll
-baseurl: "/plantilla-jekyll" # the subpath of your site, e.g. /blog
-url: "http://curso-github-cefire.github.io" # the base hostname & protocol for your site
+baseurl: "/plantilla-jekyll-vero" # the subpath of your site, e.g. /blog
+url: "http://organizacion-sesion-3-veromascaros.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
