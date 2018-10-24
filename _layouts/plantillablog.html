@@ -2,31 +2,26 @@
 layout: default
 ---
 
-<div>
-  {%- if page.title -%}
-    <h1>{{ page.title }}</h1>
-  {%- endif -%}
+{{ content }}
 
-  {{ content }}
-
-  {%- if site.posts.size > 0 -%}
+  {% if site.posts.size > 0 %}
     <h2>{{ page.list_title | default: "Posts" }}</h2>
     <ul>
-      {%- for post in site.posts -%}
+      {% for post in site.posts %}
       <li>
-        {%- assign date_format = "%b %-d, %Y" -%}
-        <span>{{ post.date | date: date_format }}</span>
         <h3>
-          <a href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
+          <a href="{{site.baseurl}}{{ post.url }}">
+            {{ post.title }}
           </a>
+		  {% assign date_format = "%b %-d, %Y" %}
+        <span>{{ post.date | date: date_format }}</span>
         </h3>
-        {{ post.excerpt }}
+		{{ post.excerpt | strip_html | truncatewords:75 }}
       </li>
-      {%- endfor -%}
+	  <br />
+	  {% endfor %}	  
     </ul>
 
     
-  {%- endif -%}
+  {% endif %}
 
-</div>
